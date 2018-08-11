@@ -1,5 +1,5 @@
 from behave.__main__ import main as behave_main
-from pysst.steps.internal_steps import *
+from pysst.steps.nmap_steps import *
 import argparse
 import os
 import shutil
