@@ -29,6 +29,7 @@ setup(
           },
     install_requires=['behave==1.2.6',
                       'python-nmap==0.6.1',
+                      'requests==2.19.1',
                      ],
     test_suite='nose.collector',
     tests_require=['nose==1.3.7', 'mock==2.0.0']
