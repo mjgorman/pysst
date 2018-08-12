@@ -7,6 +7,10 @@ Python System Security Testing
 ## Create basic skeleton
 ```pysst --init <directory/to/create>```
 
+## Examples
+The examples directory contains basic examples of each
+of the modules currently supported.
+
 ## Usage
 To run on features in the current directory:
 
