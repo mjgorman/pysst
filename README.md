@@ -1,6 +1,8 @@
 # pysst
 Python System Security Testing
 
+[![CircleCI](https://circleci.com/gh/mjgorman/pysst.svg?style=svg)](https://circleci.com/gh/mjgorman/pysst)
+
 ## Install
 ```pip install git+https://github.com/mjgorman/pysst.git```
 
