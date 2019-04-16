@@ -3,9 +3,10 @@ jobs:
   build:
     working_directory: ~/pysst
     docker:
-      - image: circleci/python:3.6.4
+      - image: circleci/python:latest
     steps:
       - checkout
+      - run: sudo apt-get update && sudo apt-get install nmap
       - run:
           command: |
             python -m venv venv
