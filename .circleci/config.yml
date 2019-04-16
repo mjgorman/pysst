@@ -7,11 +7,17 @@ jobs:
     steps:
       - checkout
       - run: sudo apt-get update && sudo apt-get install nmap
+      - restore_cache:
+          key: pysst-{{ .Branch }}-{{ checksum "setup.py" }}
       - run:
           command: |
             python -m venv venv
             source venv/bin/activate
             pip install .
+      - save_cache:
+          key: pysst-{{ .Branch }}-{{ checksum "setup.py" }}
+          paths:
+            - "venv"
       - run:
           command: |
             source venv/bin/activate
