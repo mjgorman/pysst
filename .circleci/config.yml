@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/pysst
+    docker:
+      - image: circleci/python:3.6.4
+    steps:
+      - checkout
+      - run:
+        command: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install .
