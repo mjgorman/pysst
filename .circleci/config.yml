@@ -7,7 +7,12 @@ jobs:
     steps:
       - checkout
       - run:
-        command: |
-          python -m venv venv
-          source venv/bin/activate
-          pip install .
+          command: |
+            python -m venv venv
+            source venv/bin/activate
+            pip install .
+      - run:
+          command: |
+            source venv/bin/activate
+            pysst --features examples/
+
