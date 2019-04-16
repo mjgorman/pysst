@@ -3,6 +3,7 @@ from pysst.steps import *
 import argparse
 import os
 import shutil
+import sys
 
 
 def main():
@@ -18,9 +19,9 @@ def main():
 def launch_behave(features):
     try:
         for feature in features:
-            behave_main(feature)
+            sys.exit(behave_main(feature))
     except TypeError:
-        behave_main()
+        sys.exit(behave_main())
 
 
 def create_skeleton(path):

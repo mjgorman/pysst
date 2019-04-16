@@ -16,3 +16,9 @@ def step_nmap_will_show_closed(context):
     state = context.scanner[context.target]['tcp'][int(context.port)]['state']
     assert state == "closed"
 
+@then('nmap will show open')
+def step_nmap_will_show_closed(context):
+    context.scanner.scan(context.target, context.port)
+    state = context.scanner[context.target]['tcp'][int(context.port)]['state']
+    assert state == "open"
+
