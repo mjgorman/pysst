@@ -31,6 +31,6 @@ setup(
                       'python-nmap==0.6.1',
                       'requests==2.21.0',
                      ],
-    test_suite='nose.collector',
-    tests_require=['nose==1.3.7', 'mock==2.0.0']
+    tests_require=['pytest==4.4.1', 'pytest-cov'],
+    setup_requires=['pytest-runner', 'pytest-cov']
 )

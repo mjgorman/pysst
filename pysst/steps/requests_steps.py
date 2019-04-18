@@ -15,7 +15,7 @@ def step_the_request_type_is(context, request_type):
     context.request_type = request_type.lower()
 
 @then('the status code is {status_code:d}')
-def step_nmap_will_show_closed(context, status_code):
+def step_status_code_is(context, status_code):
     if context.request_type == 'get':
         r = context.requests.get(context.target, headers=context.headers)
     if context.request_type == 'post':
