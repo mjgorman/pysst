@@ -29,3 +29,10 @@ def test_step_status_code_is():
     context.target = "https://google.com"
     context.requests = requests
     step_status_code_is(context, 200)
+
+def test_step_status_code_is_post():
+    context = behave_context()
+    context.target = "https://google.com"
+    context.requests = requests
+    step_the_request_type_is(context, 'post')
+    step_status_code_is(context, 405)
