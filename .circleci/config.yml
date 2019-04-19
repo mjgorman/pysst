@@ -23,3 +23,5 @@ jobs:
             source venv/bin/activate
             python setup.py test
 
+      - store_artifacts:
+          path: ~/pysst/htmlcov
