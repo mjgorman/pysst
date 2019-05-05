@@ -8,13 +8,15 @@ import sys
 
 def main():
     parser = argparse.ArgumentParser(description='Run one or more pysst test suites')
-    parser.add_argument('--features', nargs='+', help='Path to your feature(s)')
-    parser.add_argument('--init', help='Directory or Directories of your features')
+    parser.add_argument('-f', '--features', nargs='+', help='Path to your feature(s)')
+    parser.add_argument('-i', '--init', help='Directory or Directories of your features')
     args = parser.parse_args()
-    if args.init is not None:
+    if args.init:
         create_skeleton(args.init)
-    else:
+    elif args.features:
         launch_behave(args.features)
+    else:
+        parser.print_help()
 
 def launch_behave(features):
     try:
@@ -26,7 +28,10 @@ def launch_behave(features):
 
 def create_skeleton(path):
     root = os.path.dirname(os.path.realpath(__file__))
-    shutil.copytree(f'{root}/skeleton', path)
+    try:
+        shutil.copytree(f'{root}/skeleton', path)
+    except FileExistsError:
+        print(f'ERROR: {path} directory already exists.')
 
 
 if __name__ == "__main__":
